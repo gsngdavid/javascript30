@@ -1,16 +1,19 @@
-document.addEventListener('keypress', handleSounds);
-
-function handleSounds(event) {
+function playSound(event) {
     let audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
     let key = document.querySelector(`div[data-key="${event.keyCode}"]`);
     audio.currentTime = 0;
     audio.play();
     
     key.classList.add('playing');
-    setTimeout(() => removePlayingClass(event.keyCode), 100)
 }
 
-function removePlayingClass(keyCode) {
-    let key = document.querySelector(`div[data-key="${keyCode}"]`);
-    key.classList.remove('playing');
+function removePlayingClass(event) {
+    if(event.propertyName !== 'transform') return;
+    
+    event.target.classList.remove('playing');
 }
+
+document.addEventListener('keypress', playSound);
+
+let keys = document.querySelector('.keys');
+keys.addEventListener('transitionend', removePlayingClass);
