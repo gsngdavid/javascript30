@@ -38,7 +38,7 @@
   
       // Array.prototype.sort()
       // 3. Sort the inventors by birth date, oldest to youngest
-      let sortedInventors = inventors.sort( (x, y) => (y.passed - y.year) - (x.passed - x.year) );
+      let sortedInventors = inventors.sort((x, y) => x.year > y.year ? 1 : -1);
       console.log(sortedInventors);
   
       // Array.prototype.reduce()
