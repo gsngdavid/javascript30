@@ -56,6 +56,8 @@
   
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      let sortedPeople = people.sort((a, b) => a.split(', ')[0] > b.split(', ')[0] ? 1 : -1);
+      console.log(sortedPeople);
   
       // 8. Reduce Exercise
       // Sum up the instances of each of these
