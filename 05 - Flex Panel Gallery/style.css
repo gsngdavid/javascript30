@@ -73,5 +73,13 @@ body {
 }
 
 .panel.open {
+    flex: 5;
     font-size: 40px;
+}
+
+.panel.open-active :first-child {
+    transform: translateY(0);
+}
+.panel.open-active :last-child {
+    transform: translateY(0);
 }
