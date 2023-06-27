@@ -1,5 +1,3 @@
-// ## Array Cardio Day 2
-
 const people = [
     { name: 'Wes', year: 1988 },
     { name: 'Kait', year: 1986 },
@@ -17,6 +15,9 @@ const comments = [
 
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
+const isAdult = people.some(person => (new Date().getFullYear() - person.year) >= 19);
+console.log({isAdult});
+
 // Array.prototype.every() // is everyone 19 or older?
 
 // Array.prototype.find()
