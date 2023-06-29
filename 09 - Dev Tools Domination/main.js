@@ -30,6 +30,7 @@ console.info("This is Info!");
 console.assert(1 === 2, "1 === 2 Evaluated to false");
 
 // clearing
+console.clear();
 
 // Viewing DOM Elements
 
