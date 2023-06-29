@@ -24,6 +24,7 @@ console.warn('This is a warning!!!!!!')
 console.error('This is an error :|')
 
 // Info
+console.info("This is Info!");
 
 // Testing
 
