@@ -14,6 +14,8 @@ console.log('Regular console.');
 console.log("Hello This is %s running!", "javascript");
 
 // Styled
+const styles = ['color: green', 'font-size: 2rem', 'font-weight: 600'].join(';  ');
+console.log("This is styled text %c 'Hello' %c this is not styled text.", styles, "");
 
 // warning!
 
