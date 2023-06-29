@@ -8,6 +8,7 @@ function makeGreen() {
 }
 
 // Regular
+console.log('Regular console.');
 
 // Interpolated
 
