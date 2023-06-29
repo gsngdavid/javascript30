@@ -62,3 +62,6 @@ console.groupEnd("Counting")
 console.time("Fetching data");
 // Fetching...
 console.timeEnd("Fetching data");
+
+// Table
+console.table(dogs);
