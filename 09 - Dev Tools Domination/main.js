@@ -59,3 +59,6 @@ console.count([1, 2, 3, 4, 5]);
 console.groupEnd("Counting")
 
 // timing
+console.time("Fetching data");
+// Fetching...
+console.timeEnd("Fetching data");
