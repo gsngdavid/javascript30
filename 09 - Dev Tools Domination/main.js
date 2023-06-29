@@ -46,5 +46,16 @@ console.log('World 2');
 console.groupEnd('Second group');
 
 // counting
+console.group("Counting")
+console.count("John");
+console.count("Denis");
+console.count("John");
+console.count("Doe");
+console.count("John");
+console.count("John");
+console.count("Denis");
+console.count([1, 2, 3, 4, 5]);
+console.count([1, 2, 3, 4, 5]);
+console.groupEnd("Counting")
 
 // timing
