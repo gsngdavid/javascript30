@@ -21,6 +21,7 @@ console.log("This is styled text %c 'Hello' %c this is not styled text.", styles
 console.warn('This is a warning!!!!!!')
 
 // Error :|
+console.error('This is an error :|')
 
 // Info
 
