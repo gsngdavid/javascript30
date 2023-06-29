@@ -27,6 +27,7 @@ console.error('This is an error :|')
 console.info("This is Info!");
 
 // Testing
+console.assert(1 === 2, "1 === 2 Evaluated to false");
 
 // clearing
 
