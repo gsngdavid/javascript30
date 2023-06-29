@@ -11,6 +11,7 @@ function makeGreen() {
 console.log('Regular console.');
 
 // Interpolated
+console.log("Hello This is %s running!", "javascript");
 
 // Styled
 
