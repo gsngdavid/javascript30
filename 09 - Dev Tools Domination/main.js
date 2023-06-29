@@ -36,6 +36,14 @@ console.clear();
 console.dir(p);
 
 // Grouping together
+console.groupCollapsed('First group collapsed');
+console.log('Hello 1');
+console.log('World 1');
+console.groupEnd('First group');
+console.group('Second group');
+console.log('Hello 2');
+console.log('World 2');
+console.groupEnd('Second group');
 
 // counting
 
