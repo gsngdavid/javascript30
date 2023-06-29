@@ -1,8 +1,8 @@
 
 const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+const p = document.querySelector('p');
 
 function makeGreen() {
-  const p = document.querySelector('p');
   p.style.color = '#BADA55';
   p.style.fontSize = '50px';
 }
@@ -33,6 +33,7 @@ console.assert(1 === 2, "1 === 2 Evaluated to false");
 console.clear();
 
 // Viewing DOM Elements
+console.dir(p);
 
 // Grouping together
 
