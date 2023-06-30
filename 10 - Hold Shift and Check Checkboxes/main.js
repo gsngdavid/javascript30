@@ -1,22 +1,22 @@
 const inputs = [...document.querySelectorAll('input')];
-let currentSelectedIndex = null;
+let lastCheckedIndex = null;
 
 const handleInputChange = e => {
     if (!e.target.checked) {
-        currentSelectedIndex = null;
+        lastCheckedIndex = null;
         return;
     }
 
-    let inputIndex = inputs.findIndex((input) => input === e.target);
+    let checkedIndex = inputs.findIndex((input) => input === e.target);
     
-    if(currentSelectedIndex !== null && e.shiftKey) {
-        const [ minIndex, maxIndex ] = inputIndex > currentSelectedIndex ? [ currentSelectedIndex, inputIndex ] : [ inputIndex, currentSelectedIndex ];
+    if(lastCheckedIndex !== null && e.shiftKey) {
+        const [ minIndex, maxIndex ] = checkedIndex > lastCheckedIndex ? [ lastCheckedIndex, checkedIndex ] : [ checkedIndex, lastCheckedIndex ];
 
         for(let i = minIndex; i <= maxIndex; i++) {
             inputs[i].checked = true;
         }
     }
-    currentSelectedIndex = inputIndex;
+    lastCheckedIndex = checkedIndex;
 }
 
 inputs.forEach(input => {
