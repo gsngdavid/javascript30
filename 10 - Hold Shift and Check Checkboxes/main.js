@@ -1,22 +1,18 @@
-const inputs = [...document.querySelectorAll('input')];
-let lastCheckedIndex = null;
+const inputs = document.querySelectorAll('input');
+let lastChecked = null;
+let inBetween = false;
 
 const handleInputChange = e => {
-    if (!e.target.checked && !e.shiftKey) {
-        lastCheckedIndex = null;
-        return;
-    }
-
-    let checkedIndex = inputs.findIndex((input) => input === e.target);
+    if (!e.target.checked) return lastChecked = null;
+    if (!lastChecked || !e.shiftKey) return lastChecked = e.target;
     
-    if(lastCheckedIndex !== null) {
-        const [ minIndex, maxIndex ] = checkedIndex > lastCheckedIndex ? [ lastCheckedIndex, checkedIndex ] : [ checkedIndex, lastCheckedIndex ];
-
-        for(let i = minIndex; i <= maxIndex; i++) {
-            inputs[i].checked = true;
+    inputs.forEach(input => {
+        if(input === e.target || input === lastChecked) {
+            inBetween = !inBetween;
         }
-    }
-    lastCheckedIndex = checkedIndex;
+        if(inBetween) input.checked = true;
+    });
+    lastChecked = e.target;
 }
 
 inputs.forEach(input => {
