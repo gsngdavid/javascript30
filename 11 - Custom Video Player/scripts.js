@@ -1,19 +1,24 @@
 document.addEventListener('DOMContentLoaded', e => {
+    const player = document.querySelector('.player');
     const video = document.querySelector('video');
-    const playPauseBtn = document.querySelector("[title='Toggle Play']");
+    const toggle = document.querySelector(".toggle");
+    const progressBar = document.querySelector('.progress__filled');
 
-    let isPlaying = false;
 
-    playPauseBtn.addEventListener('click', e => {
-        if(isPlaying) {
-            video.pause();
-            playPauseBtn.textContent = '►';
-            isPlaying = false;
+
+    function toggleHandler() {
+        // playPauseBtn.textContent = '►';
+        // playPauseBtn.textContent = '❚ ❚';
+        if(video.paused) {
+            video.play();
         }
         else {
-            video.play();
-            playPauseBtn.textContent = '❚ ❚';
-            isPlaying = true;
+            video.pause();
         }
-    });
+        
+    }
+
+
+
+    player.addEventListener('click', toggleHandler);
 });
