@@ -2,6 +2,7 @@ const player = document.querySelector('.player');
 const video = document.querySelector('video');
 const toggle = document.querySelector(".toggle");
 const dataSkips = document.querySelectorAll('[data-skip]');
+const inputRanges = document.querySelectorAll("[type='range']");
 const progressBar = document.querySelector('.progress__filled');
 
 
@@ -26,6 +27,11 @@ function skipHandler(e) {
     video.currentTime = video.currentTime + +value;
 }
 
+function inputRangeHandler(e) {
+    e.stopPropagation();
+    video[this.name] = +this.value;
+}
+
 
 
 player.addEventListener('click', toggleHandler);
@@ -34,3 +40,4 @@ video.addEventListener('play', updateBtn);
 video.addEventListener('pause', updateBtn);
 
 dataSkips.forEach(btn => btn.addEventListener('click', skipHandler));
+inputRanges.forEach(input => input.addEventListener('input', inputRangeHandler));
