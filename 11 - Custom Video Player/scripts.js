@@ -23,14 +23,12 @@ function updateBtn() {
     toggle.textContent = icon;
 }
 
-function skipHandler(e) {
-    e.stopPropagation();
+function skipHandler() {
     const value = this.dataset.skip;
     video.currentTime = video.currentTime + +value;
 }
 
-function inputRangeHandler(e) {
-    e.stopPropagation();
+function inputRangeHandler() {
     video[this.name] = +this.value;
 }
 
