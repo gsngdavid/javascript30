@@ -1,4 +1,5 @@
 const player = document.querySelector('.player');
+const subPlayer = document.querySelector('.player__controls');
 const video = document.querySelector('video');
 const toggle = document.querySelector(".toggle");
 const dataSkips = document.querySelectorAll('[data-skip]');
@@ -59,3 +60,5 @@ inputRanges.forEach(input => input.addEventListener('input', inputRangeHandler))
 progress.addEventListener('mousedown', _=> updateProgress = true);
 progress.addEventListener('mouseup', _=> updateProgress = false);
 progress.addEventListener('mousemove', progressMoveHandler);
+
+subPlayer.addEventListener('click', e => e.stopPropagation());
