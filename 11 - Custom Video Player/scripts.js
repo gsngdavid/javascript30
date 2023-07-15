@@ -3,6 +3,7 @@ const video = document.querySelector('video');
 const toggle = document.querySelector(".toggle");
 const dataSkips = document.querySelectorAll('[data-skip]');
 const inputRanges = document.querySelectorAll("[type='range']");
+const progress = document.querySelector('.progress');
 const progressBar = document.querySelector('.progress__filled');
 
 
@@ -32,12 +33,17 @@ function inputRangeHandler(e) {
     video[this.name] = +this.value;
 }
 
+function progressBarHandler() {
+    const percentage = (video.currentTime / video.duration) * 100;
+    progressBar.style.flexBasis = `${percentage}%`;
+}
 
 
 player.addEventListener('click', toggleHandler);
 
 video.addEventListener('play', updateBtn);
 video.addEventListener('pause', updateBtn);
+video.addEventListener('timeupdate', progressBarHandler);
 
 dataSkips.forEach(btn => btn.addEventListener('click', skipHandler));
 inputRanges.forEach(input => input.addEventListener('input', inputRangeHandler));
