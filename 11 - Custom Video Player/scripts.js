@@ -7,18 +7,22 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
     function toggleHandler() {
-        // playPauseBtn.textContent = '►';
-        // playPauseBtn.textContent = '❚ ❚';
         if(video.paused) {
             video.play();
         }
         else {
             video.pause();
         }
-        
+    }
+
+    function updateBtn() {
+        const icon = this.paused ? '►' : '❚ ❚';
+        toggle.textContent = icon;
     }
 
 
 
     player.addEventListener('click', toggleHandler);
+    video.addEventListener('play', updateBtn);
+    video.addEventListener('pause', updateBtn);
 });
